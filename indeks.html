@@ -1,154 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <title>Penjelasan Program Python Kivy</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 30px;
-      background: #f7f7f7;
-      color: #333;
-      line-height: 1.7;
-      border-radius: 8px;
-    }
-    h1 {
-      color: #007acc;
-    }
-    h2 {
-      margin-top: 30px;
-      color: #005b99;
-    }
-    pre {
-      background: #eee;
-      padding: 12px;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-    code {
-      background: #eaeaea;
-      padding: 2px 4px;
-      border-radius: 4px;
-    }
-    ul {
-      margin-top: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Penjelasan Kivy App</title>
 </head>
 <body>
+    <h1>Penjelasan Kode Kivy</h1>
 
-  <h1>📌 Penjelasan Program Python Kivy — GridLayout 4 Tombol</h1>
+    <h2>1. Import Library</h2>
+    <p>Mengimpor App, Button, GridLayout dari Kivy.</p>
 
-  <h2>Tujuan Program</h2>
-  <p>Program ini menggunakan <strong>framework Kivy</strong> untuk membuat jendela aplikasi GUI yang berisi <strong>4 tombol</strong> yang ditata otomatis dalam susunan <code>GridLayout</code> dengan 3 kolom. Ini adalah contoh sederhana untuk belajar layout grid di Kivy.</p>
+    <h2>2. Kelas MyApp</h2>
+    <p>MyApp adalah kelas utama yang mewarisi App.</p>
 
-  <h2>📄 Kode Lengkap</h2>
-  <pre>
-from kivy.app import App
-from kivy.uix.button import Button
-from kivy.uix.gridlayout import GridLayout
+    <h2>3. Fungsi build()</h2>
+    <p>build() membuat layout dan tombol-tombol.</p>
 
-class MyApp(App):
-    def build(self):
-        g_layout = GridLayout(cols=3)
+    <h2>4. Membuat GridLayout</h2>
+    <p>Membuat tata letak grid dengan 3 kolom.</p>
 
-        btn1 = Button(text='btn1', size_hint=(0.2, 0.2))
-        btn2 = Button(text='btn2', size_hint=(0.2, 0.2))
-        btn3 = Button(text='btn3', size_hint=(0.2, 0.2))
-        btn4 = Button(text='btn4', size_hint=(0.2, 0.2))
+    <h2>5. Membuat Tombol</h2>
+    <p>Button dengan teks dan ukuran tertentu.</p>
 
-        g_layout.add_widget(btn1)
-        g_layout.add_widget(btn2)
-        g_layout.add_widget(btn3)
-        g_layout.add_widget(btn4)
+    <h2>6. Menambahkan ke Layout</h2>
+    <p>add_widget() menambahkan tombol ke GridLayout.</p>
 
-        return g_layout
-
-MyApp().run()
-  </pre>
-
-  <h2>Penjelasan Baris per Baris</h2>
-
-  <h3>1️⃣ Baris 1</h3>
-  <pre>from kivy.app import App</pre>
-  <p>Digunakan untuk <strong>mengimpor</strong> kelas <code>App</code> bawaan Kivy. Kelas ini adalah dasar untuk membuat dan menjalankan aplikasi Kivy.</p>
-
-  <h3>2️⃣ Baris 2</h3>
-  <pre>from kivy.uix.button import Button</pre>
-  <p>Mengimpor komponen <code>Button</code>, yaitu widget yang digunakan untuk membuat tombol di GUI.</p>
-
-  <h3>3️⃣ Baris 3</h3>
-  <pre>from kivy.uix.gridlayout import GridLayout</pre>
-  <p>Mengimpor <code>GridLayout</code>, yaitu layout yang berfungsi menata widget dalam bentuk grid baris-kolom.</p>
-
-  <h3>4️⃣ Baris 4</h3>
-  <pre>class MyApp(App):</pre>
-  <p>Membuat kelas <code>MyApp</code> yang merupakan turunan dari kelas <code>App</code>. Di sinilah logika aplikasi ditulis.</p>
-
-  <h3>5️⃣ Baris 5</h3>
-  <pre>def build(self):</pre>
-  <p>Metode <code>build()</code> adalah metode wajib di Kivy yang <strong>menentukan tampilan utama</strong> aplikasi. Semua widget akan diatur di sini.</p>
-
-  <h3>6️⃣ Baris 6</h3>
-  <pre>g_layout = GridLayout(cols=3)</pre>
-  <p>Membuat objek <code>GridLayout</code> dengan jumlah kolom = 3. Artinya, setiap baris bisa menampung 3 widget secara horizontal.</p>
-
-  <h3>7️⃣–🔟 Baris 7–10</h3>
-  <pre>
-btn1 = Button(text='btn1', size_hint=(0.2, 0.2))
-btn2 = Button(text='btn2', size_hint=(0.2, 0.2))
-btn3 = Button(text='btn3', size_hint=(0.2, 0.2))
-btn4 = Button(text='btn4', size_hint=(0.2, 0.2))
-  </pre>
-  <p>
-    <strong>Penjelasan Membuat Tombol:</strong>
-    <ul>
-      <li>Membuat 4 tombol (<code>btn1</code> hingga <code>btn4</code>) dengan teks masing-masing.</li>
-      <li><code>text='btn1'</code>: Teks yang muncul di tombol.</li>
-      <li><code>size_hint=(0.2, 0.2)</code>: Ukuran tombol relatif terhadap parent layout, yaitu 20% lebar dan 20% tinggi layout. Jadi tombol akan menyesuaikan ukuran layout secara otomatis.</li>
-    </ul>
-  </p>
-
-  <h3>1️⃣1️⃣–1️⃣4️⃣ Baris 11–14</h3>
-  <pre>
-g_layout.add_widget(btn1)
-g_layout.add_widget(btn2)
-g_layout.add_widget(btn3)
-g_layout.add_widget(btn4)
-  </pre>
-  <p>Menambahkan keempat tombol ke dalam <code>GridLayout</code>. Layout secara otomatis menempatkan tombol-tombol ke dalam baris dan kolom. Karena <code>cols=3</code>, maka 3 tombol akan di baris pertama dan 1 tombol pindah ke baris kedua.</p>
-
-  <h3>1️⃣5️⃣ Baris 15</h3>
-  <pre>return g_layout</pre>
-  <p>Mengembalikan <code>GridLayout</code> sebagai <strong>root widget</strong>. Ini yang akan ditampilkan di jendela aplikasi.</p>
-
-  <h3>1️⃣6️⃣ Baris 16</h3>
-  <pre>MyApp().run()</pre>
-  <p>Membuat instance dari <code>MyApp</code> dan menjalankan aplikasi dengan memanggil <code>run()</code>. Inilah yang menampilkan window GUI Kivy di layar.</p>
-
-  <h2>✅ Kesimpulan</h2>
-  <p>
-    Dengan program ini, kita belajar cara:
-    <ul>
-      <li>Mengimpor komponen Kivy</li>
-      <li>Membuat layout grid dengan beberapa tombol</li>
-      <li>Menambahkan widget ke layout</li>
-      <li>Menjalankan aplikasi Kivy</li>
-    </ul>
-  </p>
-
-  <h2>📂 Cara Menjalankan Program</h2>
-  <ol>
-    <li>Simpan kode Python di file, misalnya <code>main.py</code>.</li>
-    <li>Instal Kivy jika belum: <code>pip install kivy</code>.</li>
-    <li>Jalankan dengan perintah: <code>python main.py</code>.</li>
-    <li>Jendela akan muncul berisi 4 tombol yang tertata dalam 3 kolom grid.</li>
-  </ol>
-
+    <h2>7. Menjalankan App</h2>
+    <p>MyApp().run() menjalankan aplikasi.</p>
 </body>
 </html>
-
-
-
